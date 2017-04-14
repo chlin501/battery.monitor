@@ -83,10 +83,11 @@ int main(int argc, char** argv)
         syslog(LOG_ERR,"Fail to send low battery notification!");
         return -1;
       }
+      g_object_unref(G_OBJECT(n));
     } 
     sleep(5);
   }
-
+  
   closelog();
   return 0;
 
